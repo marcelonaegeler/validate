@@ -40,7 +40,7 @@ Note: The JS dependencies, like RequireJS and jQuery, will be installed with bow
 ## Usage
 0. If you use RequireJS for modular applications, you can set an attribute in body and get it int the `main.js` file:
 		
-		`<body data-require="validate">`
+		<body data-require="validate">
 
 0. Include the RequireJS file in the end of the HTML file, calling the `main.js`:
 		
