@@ -39,12 +39,15 @@ Note: The JS dependencies, like RequireJS and jQuery, will be installed with bow
 
 ## Usage
 0. If you use RequireJS for modular applications, you can set an attribute in body and get it int the `main.js` file:
-		<body data-require="validate">
+		
+		`<body data-require="validate">`
 
 0. Include the RequireJS file in the end of the HTML file, calling the `main.js`:
+		
 		<script data-main="javascripts/main.js" src="vendor/requirejs/require.js"></script>
 
 0. Add the datasets (`data-*`) and required attribute in your HTML fields ([Available attributes and datasets](#available-attributes-and-datasets)):
+		
 		<input type="text" name="email" id="email" required data-email="true" >
 
 ## Available attributes and datasets
@@ -52,31 +55,31 @@ The following attributes and datasets can be used in your code:
 
 0. Attributes:
 
-		```required```: [Optional] Set the field as required.
+		required: [Optional] Set the field as required.
 
 
 0. Datasets (Set in the `form` tag):
 
-		```data-validate="true"```: [Required] Turn the validation on (true) or off (false or don't set it) in this form;
+		data-validate="true": [Required] Turn the validation on (true) or off (false or don't set it) in this form;
 
-		```data-submit="function"```: [Optional] Submit handler, when the form is sucessfully validated, this function is called (can be used to send your form via AJAX);
+		data-submit="function": [Optional] Submit handler, when the form is sucessfully validated, this function is called (can be used to send your form via AJAX);
 
 
 0. Datasets (These are all optional. Set in the tags inside the form, like `input`, `select`...):
 
-		```data-email="true"```: Validate email;
+		data-email="true": Validate email;
 
-		```data-cpf="true"```: Validate CPF;
+		data-cpf="true": Validate CPF;
 
-		```data-cnpj="true"```: Validate CNPJ;
+		data-cnpj="true": Validate CNPJ;
 
-		```data-remote="object"```: Do a request (AJAX) with the info in the `object` to validate in a external file;
+		data-remote="object": Do a request (AJAX) with the info in the "object" to validate in a external file;
 
-		```data-equal-to="#element"```: Make this field equal to the one passed in `#id`;
+		data-equal-to="#element": Make this field equal to the one passed in "#id";
 
-		```data-money="true"```: Set a money mask in this input;
+		data-money="true": Set a money mask in this input;
 
-		```data-mask="mask"```: Set a mask in this input. Ex.: `mask` can be `phone` for phone masks, `99/99/9999` for dates. See [Masked input](http://digitalbush.com/projects/masked-input-plugin/).
+		data-mask="mask": Set a mask in this input. Ex.: "mask" can be "phone" for phone masks, "99/99/9999" for dates. See [Masked input](http://digitalbush.com/projects/masked-input-plugin/).
 
 
 ## Todos
