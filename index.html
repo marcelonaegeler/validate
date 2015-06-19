@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validate.js</title>
+	<style>
+	label.label-form {
+		display: block;
+	}
+	input {
+		padding: 5px;
+		color: #999;
+	}
+	</style>
+</head>
+<body data-require="validate">
+	<form action="" name="form1" method="post" data-validate="true" data-submit="submitHandler">
+		<h1>Form 1</h1>
+		<div>
+			<label for="nome" class="label-form">Nome: </label>
+			<input type="text" name="nome" id="nome" placeholder="Nome" required>
+		</div>
+		<div>
+			<label for="email" class="label-form">Email: </label>
+			<input type="text" name="email" id="email" required data-email="true">
+		</div>
+		<div>
+			<label for="telefone" class="label-form">Telefone: </label>
+			<input type="text" name="telefone" id="telefone" required data-mask="phone">
+		</div>
+		<div>
+			<label for="cpf" class="label-form">CPF: </label>
+			<input type="text" name="cpf" id="cpf" required data-cpf="true" data-mask="999.999.999-99">
+		</div>
+		<div>
+			<label for="valor" class="label-form">Valor: </label>
+			<input type="text" name="valor" id="valor" required data-money="true">
+		</div>
+		<div>
+			<label for="mensagem" class="label-form">Mensagem: </label>
+			<textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
+		</div>
+
+		<button type="submit">Send</button>
+	</form>
+	
+	<form action="" name="form2" method="post" data-validate="true" data-submit="submitHandler">
+		<h1>Form 2</h1>
+		<div>
+			<label for="user" class="label-form">Usuário: </label>
+			<input type="text" name="user" id="user" required>
+		</div>
+		<div>
+			<label for="pass" class="label-form">Senha: </label>
+			<input type="password" name="pass" id="pass" required>
+		</div>
+		<div>
+			<label for="confirm_pass" class="label-form">Confirmar senha: </label>
+			<input type="password" name="confirm_pass" id="confirm_pass" required data-equal-to="#pass">
+		</div>
+		<button type="submit">Send</button>
+	</form>
+	
+	<script data-main="javascripts/main.js" src="vendor/requirejs/require.js"></script>
+	<script>
+	function submitHandler() {
+		alert('Form enviado via AJAX');
+
+		return false;
+	}
+	var remote = {
+		url: '/'
+		, type: 'POST'
+		, data: {
+			teste: function() {
+				return $('#teste').val()
+			}
+		}
+	};
+	</script>
+</body>
+</html>

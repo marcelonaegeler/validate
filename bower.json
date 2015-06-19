@@ -1,0 +1,14 @@
+{
+  "name": "Validate.js",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "~2.1.17",
+    "jquery": "~1.10.2",
+    "jquery-validation": "~1.13.1",
+    "jquery-maskmoney": "~3.0.2",
+    "jquery.maskedinput": "~1.4.1",
+    "jquery-migrate": "~1.2.1"
+  }
+}
