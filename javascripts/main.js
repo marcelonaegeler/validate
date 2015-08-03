@@ -1,25 +1,33 @@
 var config = {paths: {}, shim: {}};
   
 config.paths = {
-  jquery: '../vendor/jquery/jquery.min'
-  , migrate: '../vendor/jquery-migrate/jquery-migrate.min'
-  , validation: '../vendor/jquery-validation/dist/jquery.validate.min'
-  , additionalMethods: '../vendor/jquery-validation/dist/jquery.validate.min'
-  , maskedInput: '../vendor/jquery.maskedinput/dist/jquery.maskedinput.min'
-  , maskMoney: '../vendor/jquery-maskmoney/dist/jquery.maskMoney.min'
+  jquery: '../../vendor/jquery/jquery.min'
+  , bootstrap: '../../vendor/bootstrap/dist/js/bootstrap.min'
+  , fancybox: '../../vendor/fancybox/source/jquery.fancybox.pack'
+  , owlCarousel: '../../vendor/owl-carousel/owl-carousel/owl.carousel.min'
+  , migrate: '../../vendor/jquery-migrate/jquery-migrate.min'
+  , validation: '../../vendor/jquery-validation/dist/jquery.validate.min'
+  , additionalMethods: '../../vendor/jquery-validation/dist/jquery.validate.min'
+  , maskedInput: '../../vendor/jquery.maskedinput/dist/jquery.maskedinput.min'
+  , maskMoney: '../../vendor/jquery-maskmoney/dist/jquery.maskMoney.min'
 }
 
 config.shim = {
-  jquery: {
-    exports: '$'
+  jquery: { exports: '$' }
+  , bootstrap: {
+    deps: [ 'jquery' ]
+  }
+  , fancybox: {
+    deps: [ 'jquery' ]
+  }
+  , owlCarousel: {
+    deps: [ 'jquery' ]
   }
   , migrate: {
-    deps: [
-      'jquery'
-    ]
+    deps: [ 'jquery' ]
   }
   , validation: {
-  	deps: [
+    deps: [
       'jquery'
       , 'migrate'
     ]
@@ -31,15 +39,13 @@ config.shim = {
     ]
   }
   , maskedInput: {
-  	deps: [
+    deps: [
       'jquery'
       , 'migrate'
     ]
   }
   , maskMoney: {
-    deps: [
-      'jquery'
-    ]
+    deps: [ 'jquery' ]
   }
 };
 
@@ -47,10 +53,10 @@ config.shim = {
 require.config(config);
 
 // Get the required modules from body's 'data-require'
-var modules = document.getElementsByTagName('body')[0].dataset.require.split(',');
+var modules = document.body.dataset.require ? document.body.dataset.require.split(',') : document.getElementById('main').dataset.require.split(',');
 var requireModules = [];
 for(var module in modules) {
-	requireModules.push(modules[module].trim());
+  requireModules.push(modules[module].trim());
 }
 
 require(requireModules);
